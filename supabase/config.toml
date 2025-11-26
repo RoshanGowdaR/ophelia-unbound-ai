@@ -1,0 +1,19 @@
+project_id = "pwzkkicuslefarnxdaxc"
+
+[auth]
+enabled = true
+
+[functions.ai-mentor]
+verify_jwt = true
+
+[functions.generate-product-story]
+verify_jwt = false
+
+[functions.generate-marketing-content]
+verify_jwt = false
+
+[functions.ai-chatbot]
+verify_jwt = false
+
+[functions.enhance-product-description]
+verify_jwt = false
