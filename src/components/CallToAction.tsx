@@ -1,0 +1,65 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
+const CallToAction = () => {
+  const { t } = useTranslation();
+  
+  return (
+    <section className="py-24 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-hero opacity-10" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/30 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="glass-effect p-12 md:p-16 rounded-3xl border-2 border-primary/20 text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium">{t('cta.badge')}</span>
+            </div>
+
+            {/* Headline */}
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              {t('cta.title')}
+            </h2>
+
+            {/* Description */}
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              {t('cta.subtitle')}
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="hero" size="xl" className="group">
+                {t('cta.startTrial')}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-smooth" />
+              </Button>
+              <Button variant="glass" size="xl">
+                {t('cta.scheduleDemo')}
+              </Button>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="mt-12 pt-8 border-t border-border/50">
+              <p className="text-sm text-muted-foreground mb-4">{t('cta.trustedBy')}</p>
+              <div className="flex flex-wrap justify-center gap-8 text-2xl font-bold text-muted-foreground/50">
+                <span>India</span>
+                <span>•</span>
+                <span>Africa</span>
+                <span>•</span>
+                <span>Latin America</span>
+                <span>•</span>
+                <span>Southeast Asia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CallToAction;
